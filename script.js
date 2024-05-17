@@ -60,10 +60,10 @@ HTTP_SERVER.get("/get-files", (req, res, next) => {
 
 
 const port = 3000
-const HOSTNAME = "localhost"
 
-HTTP_SERVER.listen(port, HOSTNAME, 1, () => {
-    console.log(`App started at http://${HOSTNAME}:${port}`)
+
+HTTP_SERVER.listen(port, 1, () => {
+    console.log(`App started at http://localhost:${port}`)
 })
 
 //Middleware injection
