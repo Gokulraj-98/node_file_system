@@ -35,13 +35,17 @@ const fileName = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)
     .padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}_${currentDate.getHours().toString().padStart(2, '0')}-${currentDate.getMinutes().toString().padStart(2, '0')}-${currentDate.getSeconds().toString().padStart(2, '0')}.txt`;
 
 // Create file with the date and time as file name
+HTTP_SERVER.post("/createfiles", (req, res, next) => {  
 fs.writeFile(`./inbound/${fileName}`, `${currentTimestamp}`, (err) => {
     if (err) {
         console.error('Error creating file:', err);
         return;
     }
-    console.log(`File ${fileName} created successfully!`);
+    // console.log(`File ${fileName} created successfully!`);
+    res.json(`File ${fileName} created successfully!`);
 });
+    )};
+
 
 HTTP_SERVER.get("/get-files", (req, res, next) => {
 
