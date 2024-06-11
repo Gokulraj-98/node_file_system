@@ -43,8 +43,8 @@ fs.writeFile(`./inbound/${fileName}`, `${currentTimestamp}`, (err) => {
     }
     // console.log(`File ${fileName} created successfully!`);
     res.json(`File ${fileName} created successfully!`);
+})
 });
-    )};
 
 
 HTTP_SERVER.get("/get-files", (req, res, next) => {
